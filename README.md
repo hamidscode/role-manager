@@ -49,10 +49,39 @@ A robust **Role Management Microservice** built with **NestJS**, **MongoDB**, an
 npm install
 ```
 
-## Configuration
+## Running with Docker
 
-Create a `.env` file in the root directory:
+The easiest way to run the application with all dependencies:
 
+```bash
+# Start all services (MongoDB, Redis, and the application)
+docker-compose up -d
+
+# View logs
+docker-compose logs -f app
+
+# Stop all services
+docker-compose down
+```
+
+The application will be available at `http://localhost:3000`
+
+## Running Locally
+
+### Prerequisites
+
+- Node.js 20+
+- MongoDB (running on localhost:27017)
+- Redis (running on localhost:6379)
+
+### Steps
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Create a `.env` file in the root directory:
 ```env
 MONGODB_URI=mongodb://localhost:27017/role-manager
 REDIS_HOST=localhost
@@ -60,8 +89,7 @@ REDIS_PORT=6379
 PORT=3000
 ```
 
-## Running the Application
-
+3. Run the application:
 ```bash
 # Development mode
 npm run start:dev
